@@ -43,7 +43,7 @@ def main():
 	# these are static across all pages
 	st.title("Climate Change Belief Analysis")
 	st.subheader("Climate change tweet classification")
-	st.image('./WhatsApp Image 2021-12-08 at 12.28.06.jpeg') 
+	st.image('resources/imgs/cover photo.jpeg') 
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
@@ -99,7 +99,7 @@ def main():
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
+			predictor = joblib.load(open(os.path.join("models/Random_Forest_Classifier.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
 
 			# When model has successfully run, will print prediction
